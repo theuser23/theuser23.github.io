@@ -1,6 +1,6 @@
 var main = function() {
   $('.btn btn-default').click(function() {
-	  $('.btn btn-default').hide();
+	  $('h1').hide();
   })
 };
 
