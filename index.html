@@ -1,19 +1,28 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <link href="http://s3.amazonaws.com/codecademy-content/courses/ltp2/css/bootstrap.min.css" rel="stylesheet">
 
-  <link rel="stylesheet" type="css" href="index.css">
+<html ng-app='projectApp'>
+<head>
+	<title>Dank Apps</title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	  <script src="Project.js"></script>
+	  <link rel='stylesheet' href='Project.css'></link>
+	  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'></link>
 </head>
-<body>
-  
-  <script src="js/bootstrap.min.js"></script>
- 
-  <div class="container-fluid">
-  	<button type="button" class="btn btn-primary">Press This Button</button>
+<body ng-controller='appController'>
+  <div class="col-xs-6" id="first">
+  <div class="container">
+	<h1 id="stuff">Hello {{ firstName | uppercase }} {{ lastName}}</h1>
+	<h2>Welcome to DankAppsRUs</h2>
+	<h3>Click on your desired person</h3>
   </div>
-  <script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="index.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com"></script>
+  <div class="pictures">
+  <img src="http://img2.timeinc.net/people/i/2010/database/100531/ryan-gosling-300.jpg" ng-click="count = count + 1" ng-init="count=0">
+  </div>
+  <h1 id="RG">This is the number of times you love RG: {{count}}</h1>
+  </div>
+  <div class="col-xs-6" id="second">
+    <h1> This is the second column</h1>
+  </div>
+  
 </body>
 </html>
