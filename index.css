@@ -1,4 +1,34 @@
-.container-fluid {
-	display: block;
-	text-align: center;
+#first {
+	background: white;
+	height: 200px;
+}
+
+#stuff {
+	color:white;
+}
+
+#RG {
+	color: red;
+}
+
+#first h1 {
+	padding-top: 30px;
+	font-family: "Times New Roman";
+	font-style: italic;
+}
+
+#first h2 {
+	color: red;
+	font-style: bold;
+}
+
+#second {
+	background: white;
+	height: 200px;
+}
+
+#second h1 {
+	padding-top: 30px;
+	color: white;
+	font-family: "Arial";
 }
