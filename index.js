@@ -1,7 +1,5 @@
-var main = function() {
-  $('.btn-default').click(function() {
-	  $('h1').hide();
-  })
-};
-
-$(document).ready(main);
+var project = angular.module('projectApp', []);
+	project.controller('appController', function($scope) {
+		$scope.firstName = 'Erik';
+		$scope.lastName = 'Langford';	
+	});
