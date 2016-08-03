@@ -1,28 +1,19 @@
-<!DOCTYPE html>
-
-<html ng-app='projectApp'>
+<html ng-app="project">
 <head>
-	<title>Dank Apps</title>
-	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
-	  <script src="index.js"></script>
-	  <link rel='stylesheet' href='index.css'></link>
-	  <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'></link>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	  <script src="league.js"></script>
+	  <link rel='stylesheet' href='league.css'></link>
 </head>
-<body ng-controller='appController'>
-  <div class="col-xs-6" id="first">
-  <div class="container">
-	<h1 id="stuff">Hello {{ firstName | uppercase }} {{ lastName}}</h1>
-	<h2>Welcome to DankAppsRUs</h2>
-	<h3>Click on your desired person</h3>
-  </div>
-  <div class="pictures">
-  <img src="http://1.bp.blogspot.com/-fGjy7YG8VhY/VmeuPGcLncI/AAAAAAAABKc/HrahuEhiO8I/s1600/ryan-gosling%2Bshirtless%2Bhollygossip.jpg" ng-click="count = count + 1" ng-init="count=0">
-  </div>
-  <h1 id="RG">This is the number of times you love RG: {{count}}</h1>
-  </div>
-  <div class="col-xs-6" id="second">
-    <h1> This is the second column</h1>
-  </div>
-  
+<body ng-controller="appController">
+<h1>What is your league name? {{myStatus}} {{sumId}}</h1>
+
+<input ng-model="sumName"></input>
+<button ng-click="clicked()">Click me twice</button>
+<h2>{{sumName}} is {{datas}}</h2>
+<h2>{{sumName}} is {{names}}</h2>
+
 </body>
+<footer>
+LeagueStuff isn't endorsed by Riot Games and doesn't reflect the views or opinions of Riot Games or anyone officially involved in producing or managing League of Legends. League of Legends and Riot Games are trademarks or registered trademarks of Riot Games, Inc. League of Legends © Riot Games, Inc.
+</footer>
 </html>
