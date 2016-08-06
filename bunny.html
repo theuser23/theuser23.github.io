@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<html ng-app='bunnyProject'>
+<head>
+	<title>Dank Apps</title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	  <script src="bunny.js"></script>
+	  <link rel='stylesheet' href='bunny.css'></link>
+	  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Tangerine&effect=brick-sign">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body ng-controller="bunnyController">
+  <div class="row" id="first-row">
+  <h1 class="font-effect-brick-sign">Erik Langford Personal Website</h1>
+  </div>
+  <div class="main-content">
+	  <h1> If you're Chelsea and you're bored, then click on this button!</h1>
+	  <button type="button" class="btn btn-info" ng-click="thing = !thing; clickMe()">I'm bored</button>
+	  <h2 ng-show="thing">{{randomThing}}</h2>
+  </div>
+</body>
+</html>
