@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<html ng-app='projectApp'>
+<head>
+	<title>Dank Apps</title>
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+	  <script src="Project.js"></script>
+	  <link rel='stylesheet' href='Project.css'></link>
+	  <link rel="stylesheet" type="text/css"
+          href="https://fonts.googleapis.com/css?family=Tangerine&effect=brick-sign">
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
+	  integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+</head>
+<body ng-controller='appController as controller'>
+  <div class="row" id="first-row">
+  <h1 class="font-effect-brick-sign">Erik Langford Personal Website</h1>
+  </div>
+  <div class="row">
+  <div class="col-xs-2" id="first">
+	<h1 id="stuff">{{ controller.firstName}} {{ controller.lastName}} is an incredible front-end developer</h1>
+	<h2>Welcome to DankAppsRUs</h2>
+	<h3>Click on your desired person</h3>
+    <div class="pictures">
+      <a href="#"><img src="http://blogs.psychcentral.com/life-goals/files/2015/01/ryan-gosling.jpg" ng-click="controller.clicked()"></a>
+    </div>
+    <h1 id="RG">This is the number of times you love RG: {{controller.count}}</h1>
+    <div class="buttons">  
+	  <h1>Is RG your cutest boy? {{controller.thing}}</h1>
+	  <a href="#"><button id="yes" ng-click="yesClicked()">Yes</button></a>
+	  <a href="#"><button id="no">No</button></a>
+    </div>
+  </div>
+  
+  <div class="col-xs-8" id="second">
+
+    <h1> This is the second column</h1>
+	<h2> If you're a hunk this is where you go</h2>
+	<img src="https://cdn1.vox-cdn.com/thumbor/ZvScu0g82xCcGyUDQ-mosrOLF5w=/0x0:1920x1080/1600x900/cd
+	n0.vox-cdn.com/uploads/chorus_image/image/45508410/brule-wallpaper.0.0.jpg">
+	<h1>THis</h1>
+    <a href="bunny.html"><button type="button" class="btn btn-primary">Click if bored</button></a>
+  </div>
+
+  <div class="col-xs-2" id="third">
+
+	<h1>This is the third column. This is where extra stuff goes.</h1>
+
+  </div>
+  </div>
+  
+</body>
+</html>
