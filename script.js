@@ -109,15 +109,14 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
 	myApp.controller('bunnyController', function($scope) {
 	$scope.things = ["Wow, you're so beautiful!", 
 					 "How can you possibly be so smart and so skinny?", 
-					 "I'd like to break me off a piece of that kit-KAT bar", 
+					 "You're so outdoorsy!", 
 					 "You're a strong, independent woman!", 
 					 "Wow, have you been going to the gym?",
-					 "a",
-					 "b",
-					 "c",
-					 "d",
-					 "e",
-					 "f"];
+					 "Follow your dreams",
+					 "Why are you so good at your job?",
+					 "Your earlobes are stunning!",
+					 "Flannel has never looked so good before!",
+					 "Damn! You are pulling off that dress!"];
 	
 	$scope.clickMe = function() {
 		$scope.randomThing = $scope.things[Math.floor(Math.random() * $scope.things.length)];
