@@ -66,7 +66,7 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
     });
 
     myApp.controller('aboutController', function($scope) {
-        $scope.message = 'I also don't know what to write here.';
+        $scope.message = "I also don't know what to write here";
     });
 
     myApp.controller('contactController', function($scope) {
