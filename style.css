@@ -1,0 +1,36 @@
+.navbar-header a.navbar-brand {
+	font-size: 30px;
+	color: teal;
+}
+
+.hovering {
+	opacity: .5;
+}
+
+#first-row {
+	padding-left: 20px;
+}
+.main-content {
+	padding-top: 100px;
+	text-align:center;
+}
+
+.main-content h2 {
+	font-size:175px;
+	font-style: bold;
+	color: pink;
+}
+
+.carousel img{
+	max-width: 100%;
+	margin: 0 auto;
+}
+
+
+#myCarousel {
+	padding-top:50px;
+}
+
+#kittyRow {
+	background: black;
+}
