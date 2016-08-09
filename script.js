@@ -66,11 +66,11 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
     });
 
     myApp.controller('aboutController', function($scope) {
-        $scope.message = 'Look! I am an about page.';
+        $scope.message = 'I also don't know what to write here.';
     });
 
     myApp.controller('contactController', function($scope) {
-        $scope.message = 'Contact us! JK. This is just a demo.';
+        $scope.message = 'There is nothing here yet';
     });
 	
 	myApp.controller('leagueController', function($scope, $http) {
