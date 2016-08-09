@@ -8,13 +8,13 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
             // route for the home page
             .state('home', {
 				url: '/home',
-                templateUrl : 'pages/home.html',
+                templateUrl : 'home.html',
                 controller  : 'mainController'
             })
 			
 			.state('home.kitty', {
 				url: '/kitty',
-				templateUrl: 'pages/home-kitty.html',
+				templateUrl: 'home-kitty.html',
 				controller: function($scope) {
 					$scope.kitties = ['Dillinger', 'Peter', 'Cookie', 'Snowbelle'];
 				}
@@ -23,7 +23,7 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
             // route for the about page
             .state('about', {
 				url: '/about',
-                templateUrl : 'pages/about.html',
+                templateUrl : 'about.html',
                 controller  : 'aboutController'
             })
 
@@ -36,13 +36,13 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
 			
 			.state('LeagueApp', {
 				url: '/leagueapp',
-                templateUrl : 'pages/league.html',
+                templateUrl : 'league.html',
                 controller  : 'leagueController'
             })
 			
 			.state('bunny', {
 				url: '/katrina',
-                templateUrl: 'pages/bunny.html',
+                templateUrl: 'bunny.html',
                 controller: 'bunnyController'
             });
     });
