@@ -3,6 +3,10 @@
 	color: teal;
 }
 
+.navbar-nav {
+	font-size: 20px;
+}
+
 .hovering {
 	opacity: .5;
 }
