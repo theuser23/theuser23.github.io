@@ -30,7 +30,7 @@ var myApp = angular.module('myApp', ['ui.router', 'ngAnimate', 'ui.bootstrap']);
             // route for the contact page
             .state('contact', {
 				url: '/contact',
-                templateUrl : 'pages/contact.html',
+                templateUrl : 'contact.html',
                 controller  : 'contactController'
             })
 			
