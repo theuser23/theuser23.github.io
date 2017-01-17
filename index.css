@@ -1,0 +1,13 @@
+.stacked {
+  display:block;
+}
+
+.submit {
+  padding-top: 50px;
+}
+
+.main h1 {
+  color:blue;
+  text-align:center;
+  font-size:50px;
+}
