@@ -11,3 +11,12 @@
   text-align:center;
   font-size:50px;
 }
+
+#persontext {
+  font-family: 'Oswald';
+  text-align: center;
+}
+
+#person {
+  text-align: center;
+}
