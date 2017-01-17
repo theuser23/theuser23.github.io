@@ -14,7 +14,7 @@ var gclicked = function() {
 }
 
 var dclicked = function() {
-  karl += parseInt(document.getElementById('demo').value);
+  dan += parseInt(document.getElementById('demo').value);
 }
 
 var sclicked = function() {
