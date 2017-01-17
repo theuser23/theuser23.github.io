@@ -32,21 +32,27 @@ var jclicked = function() {
 var submit = function() {
   var winner = Math.max(forrest,dan,griffin,single,mama,jensen);
   if (forrest == winner) {
-    window.alert("Forrest");
+    document.getElementById('persontext').innerHTML = "You chose Forrest!";
+    document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
 }
 if (dan == winner) {
-  window.alert("Dan");
+  document.getElementById('persontext').innerHTML = "You chose Dan!";
+  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
 }
 if (jensen == winner) {
-  window.alert("Jensen");
+  document.getElementById('persontext').innerHTML = "You chose Jensen!";
+  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
 }
 if (single == winner) {
-  window.alert("Single");
+  document.getElementById('persontext').innerHTML = "You chose Single!";
+  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
 }
 if (griffin == winner) {
-  window.alert("Griffin");
+  document.getElementById('persontext').innerHTML = "You chose Griffin!";
+  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
 }
 if (mama == winner) {
-  window.alert("Mama");
+  document.getElementById('persontext').innerHTML = "You chose Mama!";
+  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
 }
 }
