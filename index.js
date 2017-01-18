@@ -58,7 +58,7 @@ if (griffin == winner) {
 }
 if (mama == winner) {
   document.getElementById('persontext').innerHTML = "You chose Mama!";
-  document.getElementById('person').innerHTML = "<img src='mama2.JPG'>";
+  document.getElementById('person').innerHTML = "<img src='hedgehog.jpg'>";
   window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 }
