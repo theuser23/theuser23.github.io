@@ -28,9 +28,12 @@
 
 #btn {
   color:blue;
-  text-align: center;
   text-decoration: bold;
   font-family: 'Oswald';
+}
+
+.submit {
+  text-align:center;
 }
 
 img {
