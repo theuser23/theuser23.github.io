@@ -29,6 +29,10 @@
   font-size: 50px;
 }
 
+#btn {
+  color:blue;
+}
+
 img {
   height :200px;
   width:200px;
