@@ -34,25 +34,32 @@ var submit = function() {
   if (forrest == winner) {
     document.getElementById('persontext').innerHTML = "You chose Forrest!";
     document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
+    window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 if (dan == winner) {
   document.getElementById('persontext').innerHTML = "You chose Dan!";
-  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
+  document.getElementById('person').innerHTML = "<img src='danschandel.jpg'>";
+  window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 if (jensen == winner) {
   document.getElementById('persontext').innerHTML = "You chose Jensen!";
-  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
+  document.getElementById('person').innerHTML = "<img src='jensen.jpg'>";
+  window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 if (single == winner) {
   document.getElementById('persontext').innerHTML = "You chose Single!";
-  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
+  document.getElementById('person').innerHTML = "<img src='single.jpg'>";
+  window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 if (griffin == winner) {
   document.getElementById('persontext').innerHTML = "You chose Griffin!";
-  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
+  document.getElementById('person').innerHTML = "<img src='pirate.jpg'>";
+  window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 if (mama == winner) {
   document.getElementById('persontext').innerHTML = "You chose Mama!";
-  document.getElementById('person').innerHTML = "<img src='ryangosling.jpg'>";
+  document.getElementById('person').innerHTML = "<img src='mama.jpg'>";
+  window.scrollBy(document.getElementById('persontext').offsetHeight + document.getElementById('person').offsetHeight, window.scrollY);
 }
 }
+
