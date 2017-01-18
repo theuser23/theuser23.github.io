@@ -1,3 +1,5 @@
+
+
 .stacked {
   display:block;
 }
@@ -10,6 +12,8 @@
   color:blue;
   text-align:center;
   font-size:50px;
+  font-family: 'Lobster';
+  text-decoration: underline;
 }
 
 #persontext {
@@ -20,3 +24,9 @@
 #person {
   text-align: center;
 }
+
+img {
+  height :200px;
+  width:200px;
+}
+
