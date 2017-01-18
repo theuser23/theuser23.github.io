@@ -31,6 +31,8 @@
 
 #btn {
   color:blue;
+  text-decoration: bold;
+  font-family: 'Oswald';
 }
 
 img {
