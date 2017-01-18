@@ -25,12 +25,10 @@
   text-align: center;
 }
 
-.submit {
-  font-size: 100px;
-}
 
 #btn {
   color:blue;
+  font-size: 100px;
   text-decoration: bold;
   font-family: 'Oswald';
 }
