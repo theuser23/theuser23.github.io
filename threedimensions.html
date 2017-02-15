@@ -1,0 +1,116 @@
+<html>
+<head>
+  <script src="http://cdn.babylonjs.com/2-5/babylon.js"></script>
+  <link rel="stylesheet" href="threedimensions.css">
+</head>
+<body>
+   <canvas id="renderCanvas"></canvas>
+   <script>
+           var canvas = document.getElementById("renderCanvas");
+           var engine = new BABYLON.Engine(canvas, true);
+
+           var createScene = function() {
+            scene = new BABYLON.Scene(engine);
+
+            var camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(90,0,-150), scene);
+
+            scene.activeCamera = camera;
+            scene.activeCamera.attachControl(canvas);
+
+
+            var light0 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, 1, 0), scene);
+
+            var m;
+            var m2;
+            var m3;
+            var m4;
+            var m5;
+            var m6;
+            var m7;
+
+            BABYLON.SceneLoader.ImportMesh("K", "", "Katrina.babylon", scene, function (meshes) {
+               m = meshes[0];
+               m.scaling = new BABYLON.Vector3(3,3,3);
+               m.position = new BABYLON.Vector3(0,0,0);
+               m.rotation.y = 34;
+               m.material = new BABYLON.StandardMaterial('tex', scene);
+               m.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
+            });
+
+           BABYLON.SceneLoader.ImportMesh("A", "", "Katrina.babylon", scene, function (meshes) {
+              m2 = meshes[0];
+              m2.scaling = new BABYLON.Vector3(2.8,2.8,2.8);
+              m2.position = new BABYLON.Vector3(30,7,0);
+
+              m2.material = new BABYLON.StandardMaterial('tex', scene);
+              m2.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+           });
+
+           BABYLON.SceneLoader.ImportMesh("T", "", "Katrina.babylon", scene, function (meshes) {
+              m3 = meshes[0];
+              m3.scaling = new BABYLON.Vector3(2.8,2.8,2.8);
+              m3.position = new BABYLON.Vector3(60,0,0);
+
+              m3.material = new BABYLON.StandardMaterial('tex', scene);
+              m3.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
+           });
+
+           BABYLON.SceneLoader.ImportMesh("R", "", "Katrina.babylon", scene, function (meshes) {
+              m4 = meshes[0];
+              m4.scaling = new BABYLON.Vector3(2.8,2.8,2.8);
+              m4.position = new BABYLON.Vector3(80,0,0);
+              m4.rotation.y = 34.5;
+
+              m4.material = new BABYLON.StandardMaterial('tex', scene);
+              m4.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
+           });
+
+           BABYLON.SceneLoader.ImportMesh("I", "", "Katrina.babylon", scene, function (meshes) {
+              m5 = meshes[0];
+              m5.scaling = new BABYLON.Vector3(2.8,2.8,2.8);
+              m5.position = new BABYLON.Vector3(110,0,0);
+
+              m5.material = new BABYLON.StandardMaterial('tex', scene);
+              m5.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
+           });
+
+           BABYLON.SceneLoader.ImportMesh("N", "", "Katrina.babylon", scene, function (meshes) {
+              m6 = meshes[0];
+              m6.scaling = new BABYLON.Vector3(2.8,2.8,2.8);
+              m6.position = new BABYLON.Vector3(130,0,0);
+              m6.rotation.y = 34.5;
+
+              m6.material = new BABYLON.StandardMaterial('tex', scene);
+              m6.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
+           });
+
+           BABYLON.SceneLoader.ImportMesh("A", "", "Katrina.babylon", scene, function (meshes) {
+              m7 = meshes[0];
+              m7.scaling = new BABYLON.Vector3(2.8,2.8,2.8);
+              m7.position = new BABYLON.Vector3(170,7,0);
+
+              m7.material = new BABYLON.StandardMaterial('tex', scene);
+              m7.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
+           });
+
+
+           return scene;
+         }
+
+         var scene = createScene();
+
+                   engine.runRenderLoop(function() {
+                       scene.render();
+                   });
+
+
+
+      </script>
+</body>
+</html>
