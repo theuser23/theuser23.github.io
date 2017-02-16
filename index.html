@@ -12,10 +12,38 @@
            var createScene = function() {
             scene = new BABYLON.Scene(engine);
 
-            var camera = new BABYLON.FreeCamera("camera", new BABYLON.Vector3(90,0,-150), scene);
+
+            var camera = new BABYLON.ArcRotateCamera("camera", 100,100,100, new BABYLON.Vector3(90,0,0), scene);
+
 
             scene.activeCamera = camera;
             scene.activeCamera.attachControl(canvas);
+
+            camera.setPosition(new BABYLON.Vector3(90,0,-150));
+
+            var anime = new BABYLON.Animation("anime", "alpha", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE);
+
+            var keys = [];
+            keys.push ({
+              frame: 0,
+              value: 0
+            });
+
+            keys.push({
+              frame: 4000,
+              value: 180
+            });
+
+            keys.push ({
+              frame: 8000,
+              value: 360
+            });
+
+            anime.setKeys(keys);
+
+            camera.animations.push(anime);
+
+            scene.beginAnimation(camera, 0, 100, true);
 
 
             var light0 = new BABYLON.HemisphericLight("Hemi0", new BABYLON.Vector3(0, 1, 0), scene);
@@ -32,9 +60,10 @@
                m = meshes[0];
                m.scaling = new BABYLON.Vector3(3,3,3);
                m.position = new BABYLON.Vector3(0,0,0);
-               m.rotation.y = 34;
+               m.rotation.y = 34.5;
                m.material = new BABYLON.StandardMaterial('tex', scene);
                m.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
+
 
             });
 
