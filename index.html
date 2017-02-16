@@ -131,11 +131,36 @@
 
            BABYLON.SceneLoader.ImportMesh("Heart", "", "Katrina.babylon", scene, function (meshes) {
              m8 = meshes[0];
-             m8.scaling = new BABYLON.Vector3(4,4,4);
-             m8.position = new BABYLON.Vector3(90, -20, 0);
+             m8.scaling = new BABYLON.Vector3(8,2,8);
+             m8.position = new BABYLON.Vector3(90, -30, 0);
              m8.material = new BABYLON.StandardMaterial('red', scene);
              m8.material.emissiveColor = new BABYLON.Color3(1,0,0);
-            
+             m8.rotation.x = Math.PI/2;
+             m8.rotation.y = Math.PI/3;
+
+            var myAnimation = new BABYLON.Animation("myAnimation", "scaling", 30, BABYLON.Animation.ANIMATIONTYPE_VECTOR3, BABYLON.Animation.ANIMATIONLOOPMODE_CYCLE);
+
+            var keys = [];
+            keys.push ({
+              frame: 0,
+              value: new BABYLON.Vector3(8,2,8)
+            });
+
+            keys.push({
+              frame: 50,
+              value: new BABYLON.Vector3(4,1,4)
+            });
+
+            keys.push ({
+              frame: 100,
+              value: new BABYLON.Vector3(8,2,8)
+            });
+
+            myAnimation.setKeys(keys);
+
+            m8.animations.push(myAnimation);
+
+            scene.beginAnimation(m8, 0, 100, true);
            })
 
 
