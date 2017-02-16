@@ -19,7 +19,7 @@
             scene.activeCamera = camera;
             scene.activeCamera.attachControl(canvas);
 
-            camera.setPosition(new BABYLON.Vector3(90,0,-350));
+            camera.setPosition(new BABYLON.Vector3(90,0,-150));
 
             var anime = new BABYLON.Animation("anime", "alpha", 30, BABYLON.Animation.ANIMATIONTYPE_FLOAT, BABYLON.Animation.ANIMATIONLOOPMODE_RELATIVE);
 
@@ -55,6 +55,7 @@
             var m5;
             var m6;
             var m7;
+            var m8;
 
             BABYLON.SceneLoader.ImportMesh("K", "", "Katrina.babylon", scene, function (meshes) {
                m = meshes[0];
@@ -127,6 +128,15 @@
               m7.material.emissiveTexture = new BABYLON.Texture('https://static.pexels.com/photos/1486/wood-pattern-ground-parquet-floor.jpg', scene);
 
            });
+
+           BABYLON.SceneLoader.ImportMesh("Heart", "", "Katrina.babylon", scene, function (meshes) {
+             m8 = meshes[0];
+             m8.scaling = new BABYLON.Vector3(4,4,4);
+             m8.position = new BABYLON.Vector3(90, -20, 0);
+             m8.material = new BABYLON.StandardMaterial('red', scene);
+             m8.material.emissiveColor = new BABYLON.Color3(1,0,0);
+            
+           })
 
 
            return scene;
