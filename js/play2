@@ -1,0 +1,146 @@
+var playState = {
+
+
+create: function () {
+  //Weight
+  this.weight = 20;
+  this.space = game.input.keyboard.addKey(Phaser.Keyboard.SPACEBAR);
+
+  //Map
+  this.map = game.add.tilemap('tilemap');
+  this.map.addTilesetImage('tiles', 'tiles');
+  this.backgroundLayer = this.map.createLayer('backgroundLayer');
+  this.blockedLayer = this.map.createLayer('blockedLayer');
+  this.map.setCollisionBetween(0, 100, true, 'blockedLayer');
+  this.blockedLayer.resizeWorld();
+  //Start up keyboard
+  this.keyboard = game.input.keyboard;
+
+  //song
+  this.music = game.add.audio('gameMusic');
+  this.music.play();
+  this.music.volume = 0.7;
+
+
+	game.physics.startSystem(Phaser.Physics.ARCADE);
+
+
+
+	this.player = game.add.sprite(85, game.world.height - 500, 'sprite');
+	this.player.scale.setTo(2, 2);
+	game.physics.arcade.enable(this.player);
+	game.camera.follow(this.player);
+
+	this.player.body.gravity.y = 600;
+	this.player.body.collideWorldBounds = true;
+
+  //Animations
+
+	this.player.animations.add('left', [2,3], 10, true);
+	this.player.animations.add('right', [0,1], 10, true);
+
+	this.stars = game.add.group();
+	this.stars.enableBody = true;
+	for (var i = 0; i < 5; i++) {
+     this.treat = this.stars.create(Math.random() * 1600, game.world.height - 85, 'treat');
+	   this.treat.scale.setTo(.25, .25);
+   }
+
+	this.cursors = game.input.keyboard.createCursorKeys();
+
+	this.weightText = game.add.text(16, 16, 'Weight: ' + this.weight + ' lbs', { fontSize: '32px', fill: '#000' });
+	this.weightText.fixedToCamera = true;
+	this.weightText.cameraOffset.setTo(16, 16);
+
+	//audio
+
+	this.meow = game.add.audio('meow');
+
+ 	game.time.events.loop(Phaser.Timer.SECOND / 2, this.updateCounter, this);
+
+
+},
+
+updateCounter: function () {
+if (this.weight > 0) {
+  this.weight -= 1;
+}
+},
+
+collectTreat: function (player, treat){
+  treat.kill();
+  this.meow.play('', 2);
+  this.weight += 1;
+},
+
+update: function () {
+	if (this.weight < 5 || this.weight == 5) {
+		this.player.body.gravity.y = 50;
+	} else {
+		this.player.body.gravity.y = this.weight * 50;
+	}
+
+
+	game.physics.arcade.collide(this.stars, this.blockedLayer);
+  game.physics.arcade.collide(this.player, this.blockedLayer);
+
+	game.physics.arcade.overlap(this.player, this.stars, this.collectTreat, null, this);
+
+
+this.weightText.text = 'Weight: ' + this.weight + ' lbs';
+
+
+	if (this.weight == 0 || this.weight < 0) {
+    game.time.events.add(Phaser.Timer.SECOND * 3, this.loseScreen, this);
+	}
+
+	//  Reset the players velocity (movement)
+this.player.body.velocity.x = 0;
+
+if (this.cursors.left.isDown && this.weight > 0)
+{
+		//  Move to the left
+		this.player.body.velocity.x = -150;
+
+		this.player.animations.play('left');
+
+}
+else if (this.cursors.right.isDown && this.weight > 0)
+{
+		//  Move to the right
+		this.player.body.velocity.x = 150;
+
+		this.player.animations.play('right');
+
+}
+else if (this.weight == 0 || this.weight < 0) {
+  this.player.animations.stop();
+  this.player.frame = 4;
+}
+else {
+  this.player.animations.stop();
+  this.player.frame = 0;
+}
+
+//  Allow the player to jump if they are touching the ground.
+if (this.player.body.touching.down && hitPlatform && this.weight > 0)
+{
+	this.space.onDown.addOnce(this.jump, this);
+}
+
+if (this.cursors.up.isDown && this.weight < 6) {
+	this.player.body.velocity.y = -50;
+}
+
+
+
+},
+
+jump: function() {
+  this.player.body.velocity.y = -400;
+},
+
+loseScreen: function() {
+  game.state.start('lose');
+}
+};
