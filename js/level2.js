@@ -17,6 +17,12 @@ create: function () {
   //Start up keyboard
   this.keyboard = game.input.keyboard;
 
+
+  this.content = "L E V E L T W O";
+  this.letterIndex = 0;
+  this.line = this.content.split(" ");
+  this.levelText = game.add.text(330, 200,'', { font: "130px Bangers", fill: "#ffffff" });
+  this.levelText.fixedToCamera = true;
   //song
   this.music = game.add.audio('gameMusic');
   this.music.play();
@@ -56,7 +62,7 @@ create: function () {
 
 	this.cursors = game.input.keyboard.createCursorKeys();
 
-	this.weightText = game.add.text(16, 16, 'Weight: ' + this.weight + ' lbs', { fontSize: '32px', fill: '#ffffff' });
+	this.weightText = game.add.text(16, 16, 'Weight: ' + this.weight + ' lbs', { font: '32px Bangers', fill: '#ffffff' });
 	this.weightText.fixedToCamera = true;
 	this.weightText.cameraOffset.setTo(16, 16);
 
@@ -66,7 +72,26 @@ create: function () {
 
  	game.time.events.loop(Phaser.Timer.SECOND, this.updateCounter, this);
 
+  game.time.events.repeat(Phaser.Timer.SECOND, 8, this.nextLetter, this);
 
+  game.time.events.add(Phaser.Timer.SECOND * 10, this.byeText, this);
+
+
+},
+
+nextLetter: function() {
+
+    this.levelText.text = this.levelText.text.concat(this.line[this.letterIndex]);
+    this.letterIndex++;
+
+    if (this.letterIndex == 5) {
+      this.levelText.text = this.levelText.text.concat("  ");
+    }
+
+},
+
+byeText: function() {
+  this.levelText.destroy();
 },
 
 updateCounter: function () {
@@ -78,11 +103,12 @@ if (this.weight > 0) {
 collectTreat: function (player, treat){
   treat.kill();
   this.meow.play('', 2);
-  this.weight += 1;
+  this.weight += 5;
 },
 
 nextLevel: function() {
-  game.state.start('lose');
+  this.music.stop();
+  game.state.start('win');
 },
 
 update: function () {
@@ -155,6 +181,7 @@ jump: function() {
 },
 
 loseScreen: function() {
+  this.music.stop();
   game.state.start('lose');
 }
 };

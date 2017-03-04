@@ -1,12 +1,12 @@
-var winState = {
+var loseState = {
 
     create: function() {
 
-	var winLabel = game.add.text(320, game.world.height / 2 - 100, 'YOU WIN!',
-								{font: '100px Monoton', fill: '#00FF00'});
+	var winLabel = game.add.text(100, 275, 'YOU WITHERED AWAY!',
+								{font: '50px Arial', fill: '#00FF00'});
 
 		// We give the player instructions on how to restart the game
-	var startLabel = game.add.text(400, 400,
+	var startLabel = game.add.text(100, 400,
 								   'Press enter to restart',
 								   {font: '25px Arial', fill: '#ffffff' });
 
