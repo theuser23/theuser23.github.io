@@ -3,7 +3,7 @@ var menuState = {
 
   create: function() {
 
-    var nameLabel = game.add.text(300, 265, 'Dillingers Journey', {font: '100px VT323', fill: '#ffa500'});
+    var nameLabel = game.add.text(300, 265, 'Dillingers Journey', {font: '100px Monoton', fill: '#ffa500'});
     var startLabel = game.add.text(320, 400, 'Press enter to start', {font: '30px Monoton', fill: '#ffffff'});
     this.menuMusic = game.add.audio('menuMusic');
     this.menuMusic.loop = true;
