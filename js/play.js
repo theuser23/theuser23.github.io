@@ -65,7 +65,7 @@ create: function () {
 
   this.dialogueBox = game.add.sprite(game.world.width - 200, game.world.height - 300, 'dialogue');
   this.dialogueBox.visible = false;
-  this.dialogueBox.scale.setTo(2.3,2);
+  this.dialogueBox.scale.setTo(2.6,2);
   this.dezText = game.add.text(game.world.width - 190, game.world.height - 255, '', {font: 'bold 15px VT323', fill: '#000'});
   game.time.events.add(3000, this.writeDezText, this);
 
